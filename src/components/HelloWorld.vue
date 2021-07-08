@@ -14,14 +14,21 @@
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+
+  <my-hello :name="'ForteScarlet'" />
+
 </template>
 
 <script setup>
-import { defineProps, reactive } from 'vue'
+// import { defineProps, reactive } from 'vue'
+import {defineComponent, reactive} from 'vue'
+import MyHello from "./MyHello.vue";
 
 defineProps({
   msg: String
 })
+
+// defineComponent({MyHello})
 
 const state = reactive({ count: 0 })
 </script>
