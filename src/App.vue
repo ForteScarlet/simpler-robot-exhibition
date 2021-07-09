@@ -1,15 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <n-space vertical size="large" align="stretch">
+    <n-layout embedded>
+      <n-layout-header>
+        <img alt="Vue logo" src="./assets/logo.png"/>
+      </n-layout-header>
+      <n-layout></n-layout>
+      <n-layout>
+
+        <n-layout-content>
+          <show-index/>
+        </n-layout-content>
+
+      </n-layout>
+    </n-layout>
+  </n-space>
 
 
 </template>
 
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import ShowIndex from "./ShowIndex.vue";
 
-// This starter template is using Vue 3 experimental <script setup> SFCs
-// Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+export default {
+  components: {ShowIndex}
+}
+
 </script>
 
 <style>

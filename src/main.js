@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import naive from "naive-ui";
 import App from './App.vue'
 
 // 通用字体
@@ -9,5 +10,6 @@ import 'vfonts/FiraCode.css'
 
 const app = createApp(App)
 
+app.use(naive)
 // root app mount
 app.mount('#app')
