@@ -5,6 +5,37 @@
       v-bind="i"
   />
 
+
+
+<!--  <n-space>-->
+    <n-grid x-gap="14" y-gap="20" cols="4">
+      <n-gi v-for="i in 10">
+        <n-card>
+          <template #header>
+            <n-h2>Simpler-robot</n-h2>
+            <IconAndName :icon="'src/1.jpg'" :name="'@ForteScarlet6666666666666' + i"/>
+          </template>
+          <template #cover>
+            <n-avatar
+                circle
+                size="50"
+                :src="'src/assets/logo.png'"
+            />
+          </template>
+          <template #footer>
+            footer!
+          </template>
+          <template #action>
+            action!!!
+          </template>
+        </n-card>
+      </n-gi>
+
+    </n-grid>
+<!--  </n-space>-->
+
+
+
   <!--<base-anchor-link-show />-->
 
   <!--<n-anchor :show-rail="true"-->
@@ -56,9 +87,10 @@
 import ShowIndex from "./ShowIndex.vue";
 import BaseShowCardType from "./components/BaseShowCardType.vue";
 import BaseAnchorLinkShow from "./components/BaseAnchorLinkShow.vue";
+import IconAndName from "./components/IconAndName.vue";
 
 export default {
-  components: {BaseAnchorLinkShow, BaseShowCardType, ShowIndex},
+  components: {IconAndName, BaseAnchorLinkShow, BaseShowCardType, ShowIndex},
   data() {
     return {
       typeOfWork: [
