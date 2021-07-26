@@ -7,7 +7,6 @@
         v-for="t in typeOfWork"
         :title="t.name" :href="'#' + t.id">
     </n-anchor-link>
-
   </n-anchor>
 </template>
 
