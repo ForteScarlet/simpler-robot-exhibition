@@ -54,7 +54,6 @@ export default {
   props: {
     author: Author,
     work: Work,
-
   }
 }
 

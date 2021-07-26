@@ -1,9 +1,49 @@
 <template>
 
-  <base-show-card-type
-      v-for="i in typeOfWork"
-      v-bind="i"
-  />
+
+  <n-grid x-gap="12" :cols="24">
+    <n-gi span="4"/>
+    <n-gi span="16">
+      <div v-for="i in typeOfWork">
+        <base-show-card-type v-bind="i"/>
+
+        <n-grid x-gap="12" :cols="3">
+          <base-show-card
+              :author="{
+              name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'
+            }"
+              :work="{
+              title: 'Simple-Robot', logo: 'src/assets/logo.png'
+            }"
+          />
+          <base-show-card
+              :author="{
+              name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'
+            }"
+              :work="{
+              title: 'Simple-Robot', logo: 'src/assets/logo.png'
+            }"
+          />
+
+        </n-grid>
+
+        <template v-if="i.sub">
+          <template v-for="(s,index) in i.sub">
+            <base-show-card-type
+                :name="s.name"
+                :iid="s.iid"
+                :type="s.type ? s.type : i.type"
+                :pid="i.pid ? i.pid + '-' + i.iid : i.iid"
+                :sub="s.sub ? s.sub : []"
+                :items="s.items ? s.items : []"
+            />
+            sub-{{ index }}
+          </template>
+        </template>
+      </div>
+    </n-gi>
+    <n-gi span="4"/>
+  </n-grid>
 
   <!--<base-anchor-link-show />-->
 
@@ -56,9 +96,10 @@
 import ShowIndex from "./ShowIndex.vue";
 import BaseShowCardType from "./components/BaseShowCardType.vue";
 import BaseAnchorLinkShow from "./components/BaseAnchorLinkShow.vue";
+import BaseShowCard from "./components/BaseShowCard.vue";
 
 export default {
-  components: {BaseAnchorLinkShow, BaseShowCardType, ShowIndex},
+  components: {BaseShowCard, BaseAnchorLinkShow, BaseShowCardType, ShowIndex},
   data() {
     return {
       typeOfWork: [
@@ -96,7 +137,7 @@ export default {
     }
   },
   provide() {
-    return { 'typeOfWork': this.typeOfWork }
+    return {'typeOfWork': this.typeOfWork}
   }
 }
 

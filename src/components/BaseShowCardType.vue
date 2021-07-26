@@ -8,16 +8,16 @@
                       v-bind="i"
       />
     </template>
-    <template v-if="sub">
-      <base-show-card-type v-for="s in sub"
-                           :name="s.name"
-                           :iid="s.iid"
-                           :type="s.type ? s.type : type"
-                           :pid="sid"
-                           :sub="s.sub ? s.sub : []"
-                           :items="s.items ? s.items : []"
-      />
-    </template>
+    <!--<template v-if="sub">-->
+    <!--  <base-show-card-type v-for="s in sub"-->
+    <!--                       :name="s.name"-->
+    <!--                       :iid="s.iid"-->
+    <!--                       :type="s.type ? s.type : type"-->
+    <!--                       :pid="sid"-->
+    <!--                       :sub="s.sub ? s.sub : []"-->
+    <!--                       :items="s.items ? s.items : []"-->
+    <!--  />-->
+    <!--</template>-->
   </div>
 
 
