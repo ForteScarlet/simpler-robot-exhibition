@@ -1,8 +1,10 @@
 <template>
-  <div class="cardbg">
+  <div style="position:relative; overflow: hidden; border-radius: 80% 80% 80% 80%">
+    <div class="card-bg">
+    </div>
     <n-card hoverable
             :title="work.title"
-            class="cardbgs"
+            class="card-bg-sub"
     >
       <!-- user head -->
       <IconAndName :icon="author.avatar" :name="author.name ? author.name : '无名的勇者'" :website="author.website"/>
@@ -16,7 +18,7 @@
       </p>
 
       <!-- logo -->
-      <template  #cover>
+      <template #cover>
         <br/>
         <n-avatar
             class="no-drag"
@@ -45,10 +47,9 @@
       <template #action>
         {{ info.foot }}
       </template>
-
-
     </n-card>
   </div>
+
 </template>
 
 <script>
@@ -114,23 +115,24 @@ function Info(summary, subSummary, foot) {
 
 
 <style scoped>
-.cardbg {
+.card-bg {
 }
 
 /*.head-bg {*/
 /*  background-color: rgba(145, 239, 236, 0.45);*/
 /*}*/
 
-.cardbg {
-  position: relative;
-  /*filter: blur(9px);*/
-  background: url('https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640') no-repeat center;;
-  z-index: 1;
-  /*z-index: -1;*/
-}
-.cardbgs {
+.card-bg {
   height: 100%;
-  background:rgba(255,255,255,0.85);
+  width: 100%;
+  position: absolute;
+  filter: blur(9px);
+  background: url('https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640') no-repeat center;;
+}
+
+.card-bg-sub {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
 }
 
 .no-drag {
