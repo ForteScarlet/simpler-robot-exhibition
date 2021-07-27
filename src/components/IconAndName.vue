@@ -1,9 +1,9 @@
 <template>
-  <a href="http://forte.love" target="_blank">
+  <a :href="website" target="_blank">
     <div class="box">
       <div class="line">
         <div class="picbox">
-          <img :src="icon" alt="name" class="pic">
+          <img :src="icon" alt="name" class="pic" draggable="false">
         </div>
         <p class="title"> {{ name }} </p>
       </div>
@@ -14,7 +14,11 @@
 <script>
 export default {
   name: "IconAndName",
-  props: ["icon", "name"]
+  props: {
+    'icon': String,
+    'name': String,
+    'website': String
+  }
 }
 </script>
 
@@ -23,6 +27,16 @@ export default {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+a {
+ text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
 }
 
 .box {

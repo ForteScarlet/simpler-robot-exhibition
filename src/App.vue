@@ -18,11 +18,24 @@
           />
           <base-show-card
               :author="{
-              name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'
-            }"
+                    name: 'ForteScarlet',
+                    avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640',
+                    website: 'http://forte.love'
+                }"
               :work="{
-              title: 'Simple-Robot', logo: 'src/assets/logo.png'
-            }"
+                  title: 'Simple-Robot',
+                  logo: 'src/assets/logo.png'
+                }"
+              :info="{
+                summary: '这是一段项目介绍！！！！介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                 '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                  '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                  '介绍介绍介绍' +
+                  '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                   '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍',
+                   subSummary: '这里是收尾',
+                foot: 'http://forte.love'
+              }"
           />
 
         </n-grid>
@@ -44,36 +57,6 @@
     </n-gi>
     <n-gi span="4"/>
   </n-grid>
-
-
-
-<!--  <n-space>-->
-    <n-grid x-gap="14" y-gap="20" cols="4">
-      <n-gi v-for="i in 10">
-        <n-card>
-          <template #header>
-            <n-h2>Simpler-robot</n-h2>
-            <IconAndName :icon="'src/1.jpg'" :name="'@ForteScarlet6666666666666' + i"/>
-          </template>
-          <template #cover>
-            <n-avatar
-                circle
-                size="50"
-                :src="'src/assets/logo.png'"
-            />
-          </template>
-          <template #footer>
-            footer!
-          </template>
-          <template #action>
-            action!!!
-          </template>
-        </n-card>
-      </n-gi>
-
-    </n-grid>
-<!--  </n-space>-->
-
 
 
   <!--<base-anchor-link-show />-->
