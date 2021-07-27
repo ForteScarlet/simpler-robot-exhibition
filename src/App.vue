@@ -1,3 +1,4 @@
+<!--suppress HttpUrlsUsage -->
 <template>
 
 
@@ -6,103 +7,62 @@
     <n-gi span="16">
       <div v-for="i in typeOfWork">
         <base-show-card-type v-bind="i"/>
-
-        <n-grid x-gap="12" :cols="3">
-          <base-show-card
-              :author="{
-              name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'
-            }"
-              :work="{
-              title: 'Simple-Robot', logo: 'src/assets/logo.png'
-            }"
-          />
-          <base-show-card
-              :author="{
-                    name: 'ForteScarlet',
-                    avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640',
-                    website: 'http://forte.love'
-                }"
-              :work="{
-                  title: 'Simple-Robot',
-                  logo: 'src/assets/logo.png'
-                }"
-              :info="{
-                summary: '这是一段项目介绍！！！！介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
-                 '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
-                  '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
-                  '介绍介绍介绍' +
-                  '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
-                   '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍',
-                   subSummary: '这里是收尾',
-                foot: 'http://forte.love'
-              }"
-          />
-
+        <n-grid x-gap="50" cols="3 s:1 m:1 l:2 xl:3 2xl:3" responsive="screen">
+                    <base-show-card
+                        :author="{
+                        name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'
+                      }"
+                        :work="{
+                        title: 'Simple-Robot', logo: '/simbot-logo.png'
+                      }"
+                    />
+                    <base-show-card
+                        :author="{
+                              name: 'ForteScarlet',
+                              avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640',
+                              website: 'http://forte.love'
+                          }"
+                        :work="{
+                            title: 'Simple-Robot',
+                            logo: '/simbot-logo.png'
+                          }"
+                        :info="{
+                          summary: '这是一段项目介绍！！！！介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                           '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                            '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                            '介绍介绍介绍' +
+                            '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +
+                             '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍',
+                             subSummary: '这里是收尾',
+                          foot: 'http://forte.love'
+                        }"
+                    />
         </n-grid>
 
-        <template v-if="i.sub">
-          <template v-for="(s,index) in i.sub">
-            <base-show-card-type
-                :name="s.name"
-                :iid="s.iid"
-                :type="s.type ? s.type : i.type"
-                :pid="i.pid ? i.pid + '-' + i.iid : i.iid"
-                :sub="s.sub ? s.sub : []"
-                :items="s.items ? s.items : []"
-            />
-            sub-{{ index }}
+        <template v-if="i.sub && allWorks[i.iid]">
+          <template v-for="s in i.sub">
+            <template v-if="allWorks[i.iid][s.iid]">
+              <base-show-card-type
+                  :name="s.name"
+                  :iid="s.iid"
+                  :type="s.type ? s.type : i.type"
+                  :pid="i.pid ? i.pid + '-' + i.iid : i.iid"
+                  :sub="s.sub ? s.sub : []"
+                  :items="s.items ? s.items : []"
+              />
+              <n-grid x-gap="50" cols="3 s:1 m:1 l:2 xl:3 2xl:3" responsive="screen">
+                <base-show-card
+                    v-for="w in allWorks[i.iid][s.iid]"
+                    v-bind="w"
+                />
+              </n-grid>
+            </template>
           </template>
         </template>
       </div>
     </n-gi>
     <n-gi span="4"/>
   </n-grid>
-
-
-  <!--<base-anchor-link-show />-->
-
-  <!--<n-anchor :show-rail="true"-->
-  <!--          :show-background="true"-->
-  <!--          :offset-target="() => $refs.showIndexList"-->
-  <!--          :ignore-gap="true">-->
-  <!--  <n-anchor-link-->
-  <!--      v-for="t in typeOfWork"-->
-  <!--      :title="t.name" href="#tag-official">-->
-  <!--  </n-anchor-link>-->
-
-  <!--</n-anchor>-->
-
-  <!--<n-space vertical size="large" align="stretch">-->
-  <!--  <n-layout embedded :native-scrollbar="false" position="absolute">-->
-  <!--    <n-layout-header style="height: 64px; padding: 24px;"-->
-  <!--                     bordered>-->
-  <!--      作品展示区了啦！-->
-  <!--    </n-layout-header>-->
-
-  <!--    <n-layout has-sider position="absolute" style="top: 64px; bottom: 32px;">-->
-  <!--      &lt;!&ndash; context &ndash;&gt;-->
-  <!--      <n-layout :native-scrollbar="false" content-style="padding: 24px;">-->
-  <!--        <show-index ref="showIndexList"/>-->
-  <!--      </n-layout>-->
-  <!--      <n-layout-sider-->
-  <!--          @update:collapsed="(b) => console.log('on ' + b)"-->
-  <!--          content-style="padding: 12px;"-->
-  <!--      >-->
-  <!--        <n-anchor :show-rail="true"-->
-  <!--                  :show-background="true"-->
-  <!--                  :offset-target="() => $refs.showIndexList"-->
-  <!--                  :ignore-gap="true"-->
-  <!--        >-->
-  <!--          <n-anchor-link title="官方" href="#tag-official"/>-->
-  <!--          <n-anchor-link title="第三方" href="#tag-third-part">-->
-  <!--            <n-anchor-link title="应用" href="#tag-third-part-program"/>-->
-  <!--          </n-anchor-link>-->
-  <!--        </n-anchor>-->
-  <!--      </n-layout-sider>-->
-  <!--    </n-layout>-->
-  <!--  </n-layout>-->
-  <!--</n-space>-->
-
 
 </template>
 
@@ -117,11 +77,13 @@ export default {
   components: {IconAndName, BaseShowCard, BaseAnchorLinkShow, BaseShowCardType, ShowIndex},
   data() {
     return {
+      // 二级结构
       typeOfWork: [
         {
           name: '官方',
           iid: 'official',
           type: 'info',
+          strong: true,
           sub: [
             {
               name: '核心',
@@ -141,16 +103,73 @@ export default {
           name: '第三方',
           iid: 'third-part',
           type: 'success',
+          strong: true,
           sub: [
             {
               name: '应用',
               iid: 'program'
+            },
+            {
+              name: '框架',
+              iid: 'frame'
             }
           ]
         }
-      ]
+      ],
+      works: []
     }
   },
+
+  computed: {
+    allWorks() {
+      /*
+          {
+            'official': {
+              'core': [],
+              'component': [],
+            },
+            'third-part': {
+                 'program':
+            }
+          }
+       */
+
+      const result = {}
+      for (let v of this.typeOfWork) {
+        result[v.iid] = {}
+      }
+
+
+      for (const work of this.works) {
+        const pType = work.type[0]
+        const sType = work.type[1]
+        work.pType = pType
+        work.sType = sType
+        let data = result[pType]
+        let arrayData
+        if (!data) {
+          data = {}
+          data[sType] = arrayData
+          result[pType] = data
+        } else {
+          let dataSType = data[sType]
+          if (!dataSType) {
+            arrayData = []
+            data[sType] = arrayData
+          } else {
+            arrayData = dataSType
+          }
+        }
+
+        arrayData.push(work)
+
+
+      }
+      return result
+    }
+
+  },
+
   provide() {
     return {'typeOfWork': this.typeOfWork}
   }
@@ -158,7 +177,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

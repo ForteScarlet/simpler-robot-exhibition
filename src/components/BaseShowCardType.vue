@@ -1,23 +1,22 @@
 <template>
   <div :id="sid">
     <n-divider title-placement="center">
-      <n-tag :type="type" round>{{ name }}</n-tag>
+      <template v-if="strong">
+        <n-tag :type="type" round size="large">
+          <b>{{ name }}</b>
+        </n-tag>
+      </template>
+      <template v-else>
+        <n-tag :type="type" round>
+          <span>{{ name }}</span>
+        </n-tag>
+      </template>
     </n-divider>
     <template v-if="items">
       <base-show-card v-for="i in items"
                       v-bind="i"
       />
     </template>
-    <!--<template v-if="sub">-->
-    <!--  <base-show-card-type v-for="s in sub"-->
-    <!--                       :name="s.name"-->
-    <!--                       :iid="s.iid"-->
-    <!--                       :type="s.type ? s.type : type"-->
-    <!--                       :pid="sid"-->
-    <!--                       :sub="s.sub ? s.sub : []"-->
-    <!--                       :items="s.items ? s.items : []"-->
-    <!--  />-->
-    <!--</template>-->
   </div>
 
 
@@ -38,7 +37,11 @@ export default {
     pid: String,
     sub: Array,
     items: Array,
-    type: String
+    type: String,
+    strong: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {

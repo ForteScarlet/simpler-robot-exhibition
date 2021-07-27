@@ -1,5 +1,5 @@
 <template>
-  <div style="position:relative; overflow: hidden; border-radius: 80% 80% 80% 80%">
+  <div style="position:relative; overflow: hidden; border-radius: 1% 1% 1% 1%">
     <div class="card-bg">
     </div>
     <n-card hoverable
@@ -126,7 +126,7 @@ function Info(summary, subSummary, foot) {
   height: 100%;
   width: 100%;
   position: absolute;
-  filter: blur(9px);
+  filter: blur(3px);
   background: url('https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640') no-repeat center;;
 }
 

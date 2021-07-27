@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .box {
+      /*width: 300px;*/
+      /*height: 300px;*/
+      border: 1px solid #ccc;
+      /*border-radius: 4px;*/
+      position: relative;
+    }
+
+    .line {
+      display: flex;
+    }
+
+    .picbox {
+        border: 1px solid #ccc;
+
+      width: 150px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      transition: 1s;
+      z-index: 10;
+      background: white;
+    }
+
+    .pic {
+        border: 1px solid #ccc;
+
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 0;
+      border-radius: 50%;
+    }
+
+    .title {
+        border: 1px solid #ccc;
+
+      height: 40px;
+      line-height: 40px;
+      opacity: 0;
+      transition: 1s;
+      position: relative;
+    }
+
+    .box:hover .picbox {
+      left: -50px;
+    }
+
+    .box:hover .title {
+      margin-left: 110px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div>
+      <div class="picbox line">
+        <img src="./1.jpg" alt="" class="pic">
+      </div>
+      <p class="title line">This is your fucking Title</p>
+    </div>
+  </div>
+</body>
+a
+
+</html>

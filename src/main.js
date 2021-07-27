@@ -11,4 +11,17 @@ const app = createApp(App)
 
 app.use(naive)
 // root app mount
-app.mount('#app')
+
+
+const vm = app.mount('#app')
+
+
+const modules = import.meta.glob('./works/*.js')
+for (const modulesKey in modules) {
+    const mods = modules[modulesKey]()
+    mods.then((mod) => {
+        return mod.default.workData()
+    }).then((work) => {
+        vm.works.push(work)
+    })
+}
