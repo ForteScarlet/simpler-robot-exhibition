@@ -23,9 +23,9 @@
         <n-avatar
             class="no-drag"
             style="box-shadow: 4px 4px 10px rgba(91,85,85,0.18);"
-            circle
-            size="45"
-            :src="work.logo"
+            round
+            size="50"
+            :src="work.logo || 'simbot-logo.png'"
         />
         <!-- src="https://q1.qlogo.cn/g?b=qq&nk=2257290268&s=100" -->
       </template>
@@ -102,6 +102,7 @@ function Work(title, logo) {
 /**
  *
  * @param summary
+ * @param subSummary
  * @param foot
  * @constructor
  */
@@ -116,18 +117,11 @@ function Info(summary, subSummary, foot) {
 
 <style scoped>
 .card-bg {
-}
-
-/*.head-bg {*/
-/*  background-color: rgba(145, 239, 236, 0.45);*/
-/*}*/
-
-.card-bg {
   height: 100%;
   width: 100%;
   position: absolute;
   filter: blur(3px);
-  background: url('https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640') no-repeat center;;
+  background: url('https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640') no-repeat center;
 }
 
 .card-bg-sub {

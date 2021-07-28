@@ -19,7 +19,7 @@ export default {
             // 作者信息
             author: {
                 name: 'ForteScarlet', // 作者名称
-                avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640', // 作者头像
+                avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=100', // 作者头像
                 website: 'http://forte.love' // 作者网站，可选
             },
 

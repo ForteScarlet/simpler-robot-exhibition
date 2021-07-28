@@ -1,11 +1,10 @@
 <!--suppress HttpUrlsUsage -->
 <template>
-  <n-grid x-gap="12" :cols="24" class="exhibition">
+  <n-grid x-gap="12" y-gap="12" :cols="24">
     <n-gi span="2"/>
     <n-gi span="20">
       <div v-for="i in typeOfWork">
         <base-show-card-type v-bind="i"/>
-
         <template v-if="i.sub && allWorks[i.iid]">
           <template v-for="s in i.sub">
             <template v-if="allWorks[i.iid][s.iid]">
@@ -17,11 +16,17 @@
                   :sub="s.sub ? s.sub : []"
                   :items="s.items ? s.items : []"
               />
-              <n-grid x-gap="50" cols="3 s:1 m:1 l:2 xl:3 2xl:3" responsive="screen">
-                <base-show-card
-                    v-for="w in allWorks[i.iid][s.iid]"
-                    v-bind="w"
-                />
+              <n-grid x-gap="50" cols="1 s:1 m:2 l:3 xl:4 2xl:5" responsive="screen">
+                <n-gi v-for="w in allWorks[i.iid][s.iid]">
+                  <base-show-card v-bind="w" class="exhibition"/>
+                </n-gi>
+
+                <n-gi :suffix="i.addAble" v-if="i.addAble" #="{ overflow }">
+                  <n-card title="卡片" class="exhibition"> 卡片内容 {{
+                      overflow ? '存在溢出' : '不存在溢出'
+                    }}
+                  </n-card>
+                </n-gi>
               </n-grid>
             </template>
           </template>
@@ -30,7 +35,6 @@
     </n-gi>
     <n-gi span="2"/>
   </n-grid>
-
 </template>
 
 <script>
@@ -71,6 +75,7 @@ export default {
           iid: 'third-part',
           type: 'success',
           strong: true,
+          addAble: true,
           sub: [
             {
               name: '应用',
@@ -145,12 +150,15 @@ export default {
 
 <style scoped>
 .exhibition {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /*position: absolute;*/
+  /*height: 100%;*/
+  /*width: 100%;*/
+  /*font-family: Avenir, Helvetica, Arial, sans-serif;*/
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /*color: #2c3e50;*/
+  margin-bottom: 20px;
 }
 
 
