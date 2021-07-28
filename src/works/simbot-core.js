@@ -8,11 +8,11 @@ export default {
             // 第三方的：
             // 基本信息
             type: ['official', 'core'], // 类型
-            logo: '/simbot-logo.png',
+            // logo: '/simbot-logo.png',
             // 作品信息
             work: {
                 title: 'Simple-Robot', // 作品标题名称
-                logo: '/simbot-logo.png', // 作品logo
+                logo: 'simbot-logo.png', // 作品logo
 
             },
 

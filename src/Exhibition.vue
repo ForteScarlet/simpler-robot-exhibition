@@ -5,37 +5,6 @@
     <n-gi span="20">
       <div v-for="i in typeOfWork">
         <base-show-card-type v-bind="i"/>
-        <n-grid x-gap="50" cols="3 s:1 m:1 l:2 xl:3 2xl:3" responsive="screen">
-                    <!--<base-show-card-->
-                    <!--    :author="{-->
-                    <!--    name: 'forte', avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640'-->
-                    <!--  }"-->
-                    <!--    :work="{-->
-                    <!--    title: 'Simple-Robot', logo: '/simbot-logo.png'-->
-                    <!--  }"-->
-                    <!--/>-->
-                    <!--<base-show-card-->
-                    <!--    :author="{-->
-                    <!--          name: 'ForteScarlet',-->
-                    <!--          avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1149159218&s=640',-->
-                    <!--          website: 'http://forte.love'-->
-                    <!--      }"-->
-                    <!--    :work="{-->
-                    <!--        title: 'Simple-Robot',-->
-                    <!--        logo: '/simbot-logo.png'-->
-                    <!--      }"-->
-                    <!--    :info="{-->
-                    <!--      summary: '这是一段项目介绍！！！！介绍介绍介绍介绍介绍介绍介绍介绍介绍' +-->
-                    <!--       '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +-->
-                    <!--        '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +-->
-                    <!--        '介绍介绍介绍' +-->
-                    <!--        '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍' +-->
-                    <!--         '介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍',-->
-                    <!--         subSummary: '这里是收尾',-->
-                    <!--      foot: 'http://forte.love'-->
-                    <!--    }"-->
-                    <!--/>-->
-        </n-grid>
 
         <template v-if="i.sub && allWorks[i.iid]">
           <template v-for="s in i.sub">

@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: 'simpler-robot-exhibition',
   plugins: [vue()],
-  base: 'simpler-robot-exhibition'
+  publicDir: 'public'
 })
