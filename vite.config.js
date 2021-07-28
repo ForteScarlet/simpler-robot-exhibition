@@ -4,5 +4,5 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  publicDir: 'simpler-robot-exhibition'
+  base: 'simpler-robot-exhibition'
 })
