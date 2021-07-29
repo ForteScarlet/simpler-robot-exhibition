@@ -7,7 +7,7 @@
             class="card-bg-sub"
     >
       <!-- user head -->
-      <IconAndName :icon="author.avatar" :name="author.name ? author.name : '无名的勇者'" :website="author.website"/>
+      <IconAndName :icon="authors[0].avatar" :name="authors[0].name ? authors[0].name : '无名的勇者'" :website="authors[0].website"/>
       <p>
         <n-ellipsis line-clamp="4" :tooltip="{
         'width': 'trigger'
@@ -61,7 +61,7 @@ export default {
   name: "BaseShowCard",
   components: {IconAndName},
   props: {
-    author: Author,
+    authors: Array,
     work: Work,
     info: {
       'type': Info,
