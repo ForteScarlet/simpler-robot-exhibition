@@ -1,5 +1,5 @@
 <template>
-  <div :id="sid">
+  <div>
     <n-divider title-placement="center">
       <template v-if="strong">
         <n-tag :type="type" round size="large">
@@ -41,13 +41,14 @@ export default {
     strong: {
       type: Boolean,
       default: false
-    }
+    },
+    sid: String
   },
-  data() {
-    return {
-      sid: this.pid ? this.pid + '-' + this.iid : this.iid
-    }
-  }
+  // data() {
+  //   return {
+  //     // sid: this.pid ? this.pid + '-' + this.iid : this.iid
+  //   }
+  // }
 }
 
 

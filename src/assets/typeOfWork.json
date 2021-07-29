@@ -1,0 +1,46 @@
+[
+  {
+    "name": "官方",
+    "iid": "official",
+    "tid": "TOF-official",
+    "type": "info",
+    "strong": true,
+    "sub": [
+      {
+        "name": "核心",
+        "iid": "core",
+        "tid": "TOF-official-core"
+      },
+      {
+        "name": "组件",
+        "iid": "component",
+        "tid": "TOF-official-component"
+      },
+      {
+        "name": "其他",
+        "iid": "other",
+        "tid": "TOF-official-other"
+      }
+    ]
+  },
+  {
+    "name": "第三方",
+    "iid": "third-part",
+    "tid": "TOF-third-part",
+    "type": "success",
+    "strong": true,
+    "addAble": true,
+    "sub": [
+      {
+        "name": "应用",
+        "iid": "program",
+        "tid": "TOF-third-program"
+      },
+      {
+        "name": "框架",
+        "iid": "frame",
+        "tid": "TOF-third-part-frame"
+      }
+    ]
+  }
+]

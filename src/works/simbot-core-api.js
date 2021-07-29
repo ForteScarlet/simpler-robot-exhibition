@@ -11,7 +11,7 @@ export default {
             // logo: '/simbot-logo.png',
             // 作品信息
             work: {
-                title: 'simple-robot-core', // 作品标题名称
+                title: 'simple-robot-api', // 作品标题名称
                 logo: 'simbot-logo.png', // 作品logo
 
             },
@@ -29,9 +29,12 @@ export default {
 
 
             info: {
-                summary: 'Simple-Robot是一个通用性的机器人开发框架，以一套标准规范快速开发多个不同平台下的机器人应用。', // 主要说明
-                subSummary: 'simbot, 您的贴身小棉袄', // 辅助说明
-                foot: 'https://github.com/ForteScarlet/simpler-robot' // 卡片底层footer
+                // 主要说明
+                summary: 'simple-robot是一个通用性的机器人开发框架，以一套标准规范快速开发多个不同平台下的机器人应用。',
+                // 辅助说明
+                subSummary: 'api模块提供了simbot所有其他模块的基础规范，提供了对整个simbot的基础功能描述。',
+                // 卡片footer
+                foot: 'https://github.com/ForteScarlet/simpler-robot'
             }
         }
     }

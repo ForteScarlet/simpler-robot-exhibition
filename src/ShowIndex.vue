@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import BaseShowCard from "./components/BaseShowCard.vue";
+import BaseShowCard from "./components/showCard/BaseShowCard.vue";
 export default {
   name: "ShowIndex",
   components: {BaseShowCard}

@@ -39,8 +39,7 @@
       <!--</template>-->
 
       <template #footer>
-        <n-ellipsis line-clamp="4">
-          {{ info.subSummary }}
+        <n-ellipsis line-clamp="4" v-html="info.subSummary">
         </n-ellipsis>
       </template>
 

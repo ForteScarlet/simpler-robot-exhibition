@@ -4,16 +4,14 @@ export default {
         return {
             // official
             // 类型
-            // 官方的： core | component | other
-            // 第三方的：
+            // 官方的(official)： core | component | other
+            // 第三方的(third-part)：program(应用) | frame(框架)
             // 基本信息
             type: ['official', 'component'], // 类型
-            // logo: 'simbot-logo.png',
             // 作品信息
             work: {
-                title: 'Simple-Robot mirai组件', // 作品标题名称
+                title: 'simple-robot mirai组件', // 作品标题名称
                 logo: 'simbot-logo.png', // 作品logo
-
             },
 
             // 作者信息
@@ -23,10 +21,10 @@ export default {
                 website: 'http://forte.love' // 作者网站，可选
             },
 
-
+            // 基础介绍信息
             info: {
                 summary: 'Simple-Robot是一个通用性的机器人开发框架，以一套标准规范快速开发多个不同平台下的机器人应用。', // 主要说明
-                subSummary: 'simbot, 您的贴身小棉袄', // 辅助说明
+                subSummary: 'simbot的mirai组件对接开源框架<a href="https://github.com/mamoe/mirai/">mirai</a>来支持对QQ机器人的开发。 ', // 辅助说明
                 foot: 'https://github.com/ForteScarlet/simpler-robot' // 卡片底层footer
             }
         }

@@ -3,10 +3,11 @@
 
   <exhibition :works="works" />
 
+
 </template>
 
 <script>
-import Exhibition from "./Exhibition.vue";
+import Exhibition from "./components/exhibition/Exhibition.vue";
 
 export default {
   components: { Exhibition },
@@ -20,14 +21,14 @@ export default {
 </script>
 
 <style>
-#app {
+/*#app {*/
   /*font-family: Avenir, Helvetica, Arial, sans-serif;*/
   /*-webkit-font-smoothing: antialiased;*/
   /*-moz-osx-font-smoothing: grayscale;*/
   /*text-align: center;*/
   /*color: #2c3e50;*/
   /*margin-top: 60px;*/
-}
+/*}*/
 
 
 </style>
