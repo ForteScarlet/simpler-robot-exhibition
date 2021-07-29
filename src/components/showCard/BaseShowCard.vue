@@ -11,9 +11,9 @@
       <p>
         <n-ellipsis line-clamp="4" :tooltip="{
         'width': 'trigger'
-      }"
-        >
-          {{ info.summary }}
+      }">
+          <n-divider />
+          <span v-html="info.summary"></span>
         </n-ellipsis>
       </p>
 
@@ -27,13 +27,11 @@
             size="50"
             :src="work.logo || 'simbot-logo.png'"
         />
-        <!-- src="https://q1.qlogo.cn/g?b=qq&nk=2257290268&s=100" -->
       </template>
-
       <template #header>
-          {{ work.title }}
+        <b>{{ work.title }}</b>
+<!--        <n-gradient-text type="info"></n-gradient-text>-->
       </template>
-
       <!--<template #header-extra>-->
       <!--  header-extra!-->
       <!--</template>-->
