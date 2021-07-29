@@ -115,13 +115,19 @@ function Info(summary, subSummary, foot) {
 
 
 <style scoped>
+.n-card {
+}
+
 .top {
   position:relative;
   overflow: hidden;
   border-radius: 1% 1% 1% 1%;
+  box-shadow: 2px 2px 8px rgba(91,85,85,0.18);
+
 }
 
 .card-bg {
+  pointer-events: none;
   height: 100%;
   width: 100%;
   position: absolute;
