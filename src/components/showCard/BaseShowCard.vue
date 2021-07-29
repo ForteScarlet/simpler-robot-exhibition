@@ -1,5 +1,5 @@
 <template>
-  <div style="position:relative; overflow: hidden; border-radius: 1% 1% 1% 1%">
+  <div class="top">
     <div class="card-bg">
     </div>
     <n-card hoverable
@@ -31,7 +31,7 @@
       </template>
 
       <template #header>
-        {{ work.title }}
+          {{ work.title }}
       </template>
 
       <!--<template #header-extra>-->
@@ -115,6 +115,12 @@ function Info(summary, subSummary, foot) {
 
 
 <style scoped>
+.top {
+  position:relative;
+  overflow: hidden;
+  border-radius: 1% 1% 1% 1%;
+}
+
 .card-bg {
   height: 100%;
   width: 100%;

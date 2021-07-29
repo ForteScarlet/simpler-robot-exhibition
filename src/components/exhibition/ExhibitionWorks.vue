@@ -4,7 +4,7 @@
     <n-gi span="2"/>
     <n-gi span="20">
       <div v-for="i in typeOfWork">
-        <base-show-card-type v-bind="i" :id="i.tid" />
+        <base-show-card-type v-bind="i" :id="i.tid"/>
         <template v-if="i.sub && works[i.iid]">
           <template v-for="s in i.sub">
             <template v-if="works[i.iid][s.iid]">
