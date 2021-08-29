@@ -22,10 +22,11 @@
         <br/>
         <n-avatar
             class="no-drag"
-            style="box-shadow: 4px 4px 10px rgba(91,85,85,0.18);"
+            style="box-shadow: 4px 4px 10px rgba(91,85,85,0.18); width: 50%;"
             round
-            size="50"
+            size="15"
             :src="work.logo || 'simbot-logo.png'"
+            :draggable="false"
         />
       </template>
       <template #header>
