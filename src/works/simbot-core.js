@@ -27,7 +27,7 @@ export default {
 
 
             info: {
-                summary: 'Simple-Robot是一个通用性的机器人开发框架，以一套标准规范快速开发多个不同平台下的机器人应用。', // 主要说明
+                summary: 'simple-robot是一个通用性的机器人开发框架，以一套标准规范快速开发多个不同平台下的机器人应用。', // 主要说明
                 subSummary: 'core(核心)模块是对api的最基础实现，也是官方组件的基础。', // 辅助说明
                 foot: 'https://github.com/ForteScarlet/simpler-robot' // 卡片底层footer
             }

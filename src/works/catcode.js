@@ -27,7 +27,7 @@ export default {
 
 
             info: {
-                summary: '猫猫码（Cat code），一个可爱的通用特殊码，CQ码的精神延续。',
+                summary: '猫猫码（Cat Code），一个可爱的通用特殊码，CQ码的精神延续。',
                 subSummary: '猫猫码是一个具有特定格式的字符串格式特殊码，在simbot中作为送信特殊码规范使用，是simbot实现特殊消息标准化最可爱的方式。',
                 foot: 'https://github.com/ForteScarlet/CatCode' // 卡片底层footer
             }
